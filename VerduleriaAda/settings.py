@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-gjsh!5j_k!w3(xwx^otp2498mltf8h+6n#w8ooa1j-%*^y=2c#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 
 # Application definition
@@ -59,6 +60,7 @@ MIDDLEWARE = [
 # Configuración de CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",  # Permite peticiones desde Angular
+    "https://tu-angular.netlify.app",  # Para producción
 ]
 
 ROOT_URLCONF = 'VerduleriaAda.urls'
@@ -95,6 +97,11 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+# Si la variable DATABASE_URL está configurada, la usa en producción
+DATABASE_URL = os.getenv("DATABASE_URL")
+if DATABASE_URL:
+    DATABASES['default'] = dj_database_url.config(default=DATABASE_URL)
 
 
 # Password validation
