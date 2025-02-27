@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-gjsh!5j_k!w3(xwx^otp2498mltf8h+6n#w8ooa1j-%*^y=2c#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = os.getenv("djangoapi-2xnu.onrender.com","ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 
 # Application definition
