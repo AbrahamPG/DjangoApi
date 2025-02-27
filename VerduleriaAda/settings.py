@@ -60,7 +60,7 @@ MIDDLEWARE = [
 # Configuración de CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",  # Permite peticiones desde Angular
-    "https://tu-angular.netlify.app",  # Para producción
+    "https://verduleriaada.netlify.app",  # Para producción
 ]
 
 ROOT_URLCONF = 'VerduleriaAda.urls'
