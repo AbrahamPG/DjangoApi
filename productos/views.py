@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.response import Request
+from rest_framework.request import Request
 from rest_framework.reverse import reverse
 from django.http import HttpResponseRedirect
 from .serializer import ProductosSerializer
