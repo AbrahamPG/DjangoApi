@@ -63,6 +63,12 @@ CORS_ALLOWED_ORIGINS = [
     "https://verduleriaada.netlify.app",  # Para producción
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 8,  # Número de elementos por página
+}
+
+
 ROOT_URLCONF = 'VerduleriaAda.urls'
 
 TEMPLATES = [
